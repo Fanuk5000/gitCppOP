@@ -1,1 +1,1 @@
-Labotaries and praticals from OP
+Labotaries and praticals for OP
