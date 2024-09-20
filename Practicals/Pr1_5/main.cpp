@@ -2,7 +2,7 @@
  * Done by: me
  * Student Name: Illya Maksemchuk
  * Student Group: 121
- * Lab 1.5
+ * Pr 1.5
  */
 
 #include <iostream>
