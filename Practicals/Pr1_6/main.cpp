@@ -16,8 +16,15 @@ PR1_6
 #include <iostream>
 #include <bitset>
 #include <string>
+#include <vector>
 
 using namespace std;
+
+void printVector(const std::vector<int> &vec)
+{
+	for (int i = 0; i < vec.size(); i++)
+		std::cout << vec[i] << " ";
+}
 
 int main()
 {
@@ -26,7 +33,7 @@ int main()
 		int cou1 = 0;
 
 		int number;
-		cout << "Enter you number";
+		cout << "Enter you number: ";
 		cin >> number;
 		bitset<8> binary(number);
 		string code = binary.to_string();
@@ -35,7 +42,6 @@ int main()
 
 		for (int i = 0; i < code.length(); i++)
 		{
-			cout << code[i] << endl;
 			if (code[i] == '0')
 			{
 				cou0 += 1;
@@ -53,15 +59,28 @@ int main()
 		{
 			cout << "In the number more 1 than 0" << endl;
 		}
-		return 0;
 	}
 
 	{
 		int num1;
-		cout << "Enter you number1";
+		cout << "Enter you number1: ";
 		cin >> num1;
+
 		int num2;
-		cout << "Enter you number2";
+		cout << "Enter you number2: ";
 		cin >> num2;
+
+		bitset<8> bin1(num1);
+		string code1 = bin1.to_string();
+
+		bitset<8> bin2(num2);
+		string code2 = bin2.to_string();
+		vector<int> r_xor(code1.length());
+		for (int i = 0; i < code1.length(); i++)
+		{
+			r_xor[i] = code1[i] ^ code2[i];
 		}
+		printVector(r_xor);
+	}
+	return 0;
 }
