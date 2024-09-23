@@ -4,7 +4,6 @@
  * Student Group: 121
  * Pr 1.5
  */
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
