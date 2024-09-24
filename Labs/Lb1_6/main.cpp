@@ -1,4 +1,4 @@
-#include <iostream>
+
 /*
 Done by: me
 Student Name: Illya Maksemchuk
@@ -6,6 +6,7 @@ Student Group: 121
 Lb1_6
 
 */
+#include <iostream>
 
 using namespace std;
 
