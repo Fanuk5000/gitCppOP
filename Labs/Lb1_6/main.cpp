@@ -1,54 +1,89 @@
 #include <iostream>
-#include <string>
+/*
+Done by: me
+Student Name: Illya Maksemchuk
+Student Group: 121
+Lb1_6
 
-std::string caesarEncrypt(const std::string &text, int shift)
+*/
+
+using namespace std;
+
+void printValue(void *ptr, char type)
 {
-	std::string result = "";
-
-	// Loop through each character in the input text
-	for (char c : text)
+	if (type == 'i')
 	{
-		// Check if the character is uppercase
-		if (isupper(c))
-		{
-			result += char((c + shift - 65) % 26 + 65);
-		}
-		// Check if the character is lowercase
-		else if (islower(c))
-		{
-			result += char((c + shift - 97) % 26 + 97);
-		}
-		// If it's neither, just add the character as is
-		else
-		{
-			result += c;
-		}
+		int *intPtr = (int *)ptr;
+		cout << "Int value: " << *intPtr << endl;
 	}
-
-	return result;
+	else if (type == 'f')
+	{
+		cout << "Float value: " << *(float *)ptr << endl;
+	}
+	else if (type == 'c')
+	{
+		cout << "Unsigned short: " << *(unsigned short *)ptr << endl;
+	}
+	else
+	{
+		cout << "Unknown type" << endl;
+	}
 }
 
+// 1. Опису змінних символьного типу.
+// 2. Опису констант символьного типу.
+// 3. Ініціювання об'єктів при опису.
+// 4. Ініціювання об'єктів оператором привласнення, використовуючи значення з варіанта (табл.
+// 14), які наведені у вигляді символьних літералів та кодів символів.
 int main()
 {
-	// Just test what happens if we add shift to the 'A' and 'a'
-	int shift_test = 1;
-	std::cout << "Shifted 'A' without cast: " << 'A' + char(shift_test) << std::endl;
-	std::cout << "Shifted 'A' without cast: " << 'A' + shift_test << std::endl;
-	std::cout << "Shifted 'A' with cast   : " << char('A' + shift_test) << std::endl;
-	std::cout << "Shifted 'a' with cast   : " << char('a' + shift_test) << std::endl;
+	{
+		const char CONST1 = '1';
+		char chVar1 = 'p';
+		char chVar2 = 'N';
 
-	// Get the text and shift from the user
-	std::string text;
-	int shift;
+		const char CONST2 = 0x7a;
+		char chVar3 = 0x3b;
+		char chVar4 = 0x9;
 
-	std::cout << "Enter the text to encrypt: ";
-	std::getline(std::cin, text);
+		cout << "CONST1: " << CONST1 << endl;
+		cout << "chVar1: " << chVar1 << endl;
+		cout << "chVar2: " << chVar2 << endl;
 
-	std::cout << "Enter the shift value: ";
-	std::cin >> shift;
+		cout << "CONST2: " << CONST2 << endl;
+		cout << "chVar3 " << chVar3 << endl;
+		cout << "chVar4" << chVar4 << endl;
+	}
+	// 1. Опису змінних наступних типів: int, float, unsigned short.
+	// 2. Ініціювання змінних, що описанні в п.1 даного завдання, значеннями згідно з варіантом
+	// (табл.15).
+	// 3. Опису змінних наступних типів: double, int, char.
+	// 4. Ініціювання змінних, що описанні в п.3 даного завдання, використовуючи змінні, що описанні
+	// в п.1 даного завдання, за допомогою:
+	//  неявного приведення типів;
+	//  явного приведення типів;
+	//  механізму обходу суворої типізації
+	{
+		cout << endl;
 
-	std::string encryptedText = caesarEncrypt(text, shift);
-	std::cout << "Encrypted Text: " << encryptedText << std::endl;
+		int intValue = 3841;
+		float floatValue = 954.67f;
+		unsigned short unsignShort = 6429;
+		string testValue = "text";
 
+		void *voidPtr;
+
+		voidPtr = &intValue;
+		printValue(voidPtr, 'i');
+
+		voidPtr = &floatValue;
+		printValue(voidPtr, 'f');
+
+		voidPtr = &unsignShort;
+		printValue(voidPtr, 'c');
+
+		voidPtr = &testValue;
+		printValue(voidPtr, 's');
+	}
 	return 0;
 }
