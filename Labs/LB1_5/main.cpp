@@ -21,7 +21,8 @@ int main()
 		//  <УЛО1> (<УЛО2> (A<ОВ1>B) <БЛО> (<УЛО3> (C<ОВ2>D)))
 		//   empty ( !     (a - b))   ^  (    -     (a < b)))
 		bool res = ((!(a - b)) ^ (-(a < b)));
-		cout << "res: " << boolalpha << res << endl;
+		cout << "Result of 1: " << boolalpha << res << endl
+			 << endl;
 	}
 
 	{
@@ -33,7 +34,23 @@ int main()
 		// <УЛО1> (<УЛО2> (A<ОВ1>B) <БЛО> (<УЛО3> (C<ОВ2>D)))
 		//  empty ( !     (a - b))   ^  (    -     (a < b)))
 		bool res = ((!(a - b)) ^ (-(a < b)));
-		cout << "res: " << boolalpha << res << endl;
+		cout << "Result of 2: " << boolalpha << res << endl
+			 << endl;
+	}
+
+	{
+		const int A = 49;
+		int b = -65;
+		int e = 2;
+		int var = 13;
+		int *c = &var;
+		int d = 13;
+		long f;
+		// A <БО1> <УО> B <АО1> <СО> C <ОВ> D <АО2> E <БО2> <БазО> F
+		// БО1 БО2 АО1 АО2 УО СО БазО ОВ
+		// ^    <<  –   +   – * sizeof >=
+		float res = (A ^ -b) - (*c >= d) + (e << sizeof(f));
+		cout << "Result of computation: " << res << endl;
 	}
 
 	return 0;
