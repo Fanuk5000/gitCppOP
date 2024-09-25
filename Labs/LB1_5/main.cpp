@@ -42,8 +42,10 @@ int main()
 		const int A = 49;
 		int b = -65;
 		int e = 2;
+
 		int var = 13;
 		int *c = &var;
+
 		int d = 13;
 		long f;
 		// A <БО1> <УО> B <АО1> <СО> C <ОВ> D <АО2> E <БО2> <БазО> F
