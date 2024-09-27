@@ -38,7 +38,7 @@ vector<vector<int>> creatVec(int &num1, int &num2)
 	{
 		for (int j = 0; j < num2; j++)
 		{
-			int rand_num = rand() % 100 - 50;
+			int rand_num = rand() % 200 - 100;
 			vec[i][j] = rand_num;
 		}
 	}
@@ -57,7 +57,7 @@ void print2DVector(const vector<vector<int>> &vec)
 	}
 	cout << endl;
 }
-
+// min
 int findMinfrom2DArr(const vector<vector<int>> &vec)
 {
 	int minNum = vec[0][0];
@@ -67,36 +67,57 @@ int findMinfrom2DArr(const vector<vector<int>> &vec)
 				minNum = vec[i][j];
 	return minNum;
 }
+//<0 max
+int findMMaxfrom2DArr(const vector<vector<int>> &vec)
+{
+	int maxNum = -9999;
+	for (int i = 0; i < vec.size(); i++)
+		for (int j = 0; j < vec.size(); j++)
+			if (vec[i][j] > maxNum and vec[i][j] < 0)
+				maxNum = vec[i][j];
+	return maxNum;
+}
+//>0 min
+int findMMinfrom2DArr(const vector<vector<int>> &vec)
+{
+	int minNum = 9999;
+	for (int i = 0; i < vec.size(); i++)
+		for (int j = 0; j < vec.size(); j++)
+			if (vec[i][j] < minNum and vec[i][j] > 0)
+				minNum = vec[i][j];
+	return minNum;
+}
+// 2. Задано множину послідовностей значень
+//  A[m,n]A[m,n]A[m,n], де m – номер послідовності, а n – кількість
+//  елементів у m-тій послідовності. Знайти індекси розміщення
+//  мінімального значення в множині.
+
+// 3. Задано множину послідовностей значень
+// A[m,n]A[m,n]A[m,n], де m – номер послідовності, а n – кількість
+// елементів у m-тій послідовності. Знайти максимальне від’ємне
+// значення в множині.
+
+// 4. Задано множину послідовностей значень
+// A[m,n]A[m,n]A[m,n], де m – номер послідовності, а n – кількість
+// елементів у m-тій послідовності. Знайти мінімальне додатне
+// значення в множині.
 
 int main()
 {
-	{
-		// 2. Задано множину послідовностей значень
-		//  A[m,n]A[m,n]A[m,n], де m – номер послідовності, а n – кількість
-		//  елементів у m-тій послідовності. Знайти індекси розміщення
-		//  мінімального значення в множині.
 
-		int m = creatNum(m, 'm');
-		int n = creatNum(n, 'n');
+	int m = creatNum(m, 'm');
+	int n = creatNum(n, 'n');
 
-		vector<vector<int>> A = creatVec(m, n);
+	vector<vector<int>> A = creatVec(m, n);
 
-		print2DVector(A);
+	int mins = findMinfrom2DArr(A);
+	int mmax = findMMaxfrom2DArr(A);
+	int mmins = findMMinfrom2DArr(A);
 
-		int mins = findMinfrom2DArr(A);
-		cout << "The minimal num from 2D arr is: " << mins << endl;
-	}
-	{
-		// 3. Задано множину послідовностей значень
-		//  A[m,n]A[m,n]A[m,n], де m – номер послідовності, а n – кількість
-		//  елементів у m-тій послідовності. Знайти максимальне від’ємне
-		//  значення в множині
-		// srand(time(0));
+	print2DVector(A);
 
-		int m = creatNum(m, 'm');
-		int n = creatNum(n, 'n');
-
-		vector<vector<int>> A = creatVec(m, n);
-	}
+	cout << "The minimal num from 2D arr is: " << mins << endl;
+	cout << "The max <0 in 2D arr is: " << mmax << endl;
+	cout << "The min >0 in 2D arr is: " << mmins << endl;
 	return 0;
 }
