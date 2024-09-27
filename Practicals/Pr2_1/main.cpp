@@ -31,8 +31,9 @@ int creatNum(int &num, char letter)
 	return num;
 }
 
-vector<vector<int>> creatVec(vector<vector<int>> &vec, int &num1, int &num2)
+vector<vector<int>> creatVec(int &num1, int &num2)
 {
+	vector<vector<int>> vec(num1, vector<int>(num2));
 	for (int i = 0; i < num1; i++)
 	{
 		for (int j = 0; j < num2; j++)
@@ -74,34 +75,28 @@ int main()
 		//  A[m,n]A[m,n]A[m,n], де m – номер послідовності, а n – кількість
 		//  елементів у m-тій послідовності. Знайти індекси розміщення
 		//  мінімального значення в множині.
-		srand(time(0));
 
 		int m = creatNum(m, 'm');
 		int n = creatNum(n, 'n');
-		vector<vector<int>> A = creatVec(A, m, n);
-		// vector<vector<int>> A(m, vector<int>(n));
-		// for (int i = 0; i < m; i++)
-		// {
-		// 	for (int j = 0; j < n; j++)
-		// 	{
-		// 		int rand_num = rand() % 100 - 50;
-		// 		A[i][j] = rand_num;
-		// 	}
-		// }
-		cout << A[0][0] << endl;
+
+		vector<vector<int>> A = creatVec(m, n);
+
 		print2DVector(A);
+
 		int mins = findMinfrom2DArr(A);
 		cout << "The minimal num from 2D arr is: " << mins << endl;
-		return 0;
 	}
 	{
 		// 3. Задано множину послідовностей значень
 		//  A[m,n]A[m,n]A[m,n], де m – номер послідовності, а n – кількість
 		//  елементів у m-тій послідовності. Знайти максимальне від’ємне
 		//  значення в множині
-		srand(time(0));
+		// srand(time(0));
 
 		int m = creatNum(m, 'm');
 		int n = creatNum(n, 'n');
+
+		vector<vector<int>> A = creatVec(m, n);
 	}
+	return 0;
 }
