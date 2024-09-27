@@ -20,7 +20,7 @@ PR1_6
 
 using namespace std;
 
-void printVector(const std::vector<int> &vec)
+void printVector(const vector<int> &vec)
 {
 	for (int i = 0; i < vec.size(); i++)
 		std::cout << vec[i] << " ";
