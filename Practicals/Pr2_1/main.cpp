@@ -14,20 +14,11 @@ Pr2_1
 #include <format>
 
 using namespace std;
+
 int creatNum(int &num, char letter)
 {
-	// static int cou = 1;
-	// char res;
-	// if (cou == 1)
-	// 	res = 'm';
-	// else
-	// {
-	// 	res = 'n';
-	// 	cou = 1;
-	// }
 	cout << "Enter number " << letter << " : ";
 	cin >> num;
-	// cou++;
 	return num;
 }
 
@@ -49,7 +40,7 @@ void print2DVector(const vector<vector<int>> &vec)
 {
 	for (int i = 0; i < vec.size(); i++)
 	{
-		for (int j = 0; j < vec.size(); j++)
+		for (int j = 0; j < vec[i].size(); j++)
 		{
 			cout << setw(4) << vec[i][j];
 		}
@@ -72,7 +63,7 @@ int findMMaxfrom2DArr(const vector<vector<int>> &vec)
 {
 	int maxNum = -9999;
 	for (int i = 0; i < vec.size(); i++)
-		for (int j = 0; j < vec.size(); j++)
+		for (int j = 0; j < vec[i].size(); j++)
 			if (vec[i][j] > maxNum and vec[i][j] < 0)
 				maxNum = vec[i][j];
 	return maxNum;
@@ -82,7 +73,7 @@ int findMMinfrom2DArr(const vector<vector<int>> &vec)
 {
 	int minNum = 9999;
 	for (int i = 0; i < vec.size(); i++)
-		for (int j = 0; j < vec.size(); j++)
+		for (int j = 0; j < vec[i].size(); j++)
 			if (vec[i][j] < minNum and vec[i][j] > 0)
 				minNum = vec[i][j];
 	return minNum;
