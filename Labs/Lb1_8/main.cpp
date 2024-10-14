@@ -7,27 +7,26 @@ using namespace std;
 int main()
 
 {
+
 	{
-		// Задачі 1
 		int cou = 0;
 		int num;
 		cout << "Enter int num: ";
 		cin >> num;
-		if (num % 2 == 0)
-			cout << "The number is paired" << endl;
-		else
-			cout << "The number isn`t paired" << endl;
-		// Кінець
 
-		// Задача 2
-		while (num >= 1)
+		// Задача 1: перевірка на парність
+		if (num & 1)
+			cout << "The number isn`t paired" << endl;
+		else
+			cout << "The number is paired" << endl;
+
+		// Задача 2: підрахунок кількості 1 у двійковому поданні
+		while (num > 0)
 		{
-			if (num % 2 == 1)
-				cou++;
-			num /= 2;
+			cou += (num & 1); // додаємо 1, якщо молодший біт рівний 1
+			num >>= 1;		  // зсув числа вправо на 1 біт
 		}
-		cout << "Amout of 1: " << cou << endl;
-		// Кінець
+		cout << "Amount of 1: " << cou << endl;
 	}
 	{
 		// Задача 3
@@ -36,7 +35,7 @@ int main()
 		cin >> num;
 
 		int indx;
-		cout << "Enter index of bit u wanna check ";
+		cout << "Enter index of bit u wanna check: ";
 		cin >> indx;
 
 		int mask = 1 << indx;
