@@ -10,23 +10,23 @@ int main()
 
 	{
 		// Задача 1: перевірка на парність
-		int cou = 0;
+		int count = 0;
 		int num;
 		cout << "Enter int num: ";
 		cin >> num;
 
 		if (num & 1)
-			cout << "The number isn`t paired" << endl;
+			cout << "The number is odd" << endl; // не парне
 		else
-			cout << "The number is paired" << endl;
+			cout << "The number is even" << endl; // парне
 
 		// Задача 2: підрахунок кількості 1 у двійковому поданні
 		while (num > 0)
 		{
-			cou += (num & 1);
+			count += (num & 1);
 			num >>= 1;
 		}
-		cout << "Amount of 1: " << cou << endl;
+		cout << "Amount of 1: " << count << endl;
 	}
 	{
 		// Задача 3
