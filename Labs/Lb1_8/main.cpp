@@ -9,12 +9,12 @@ int main()
 {
 
 	{
+		// Задача 1: перевірка на парність
 		int cou = 0;
 		int num;
 		cout << "Enter int num: ";
 		cin >> num;
 
-		// Задача 1: перевірка на парність
 		if (num & 1)
 			cout << "The number isn`t paired" << endl;
 		else
@@ -23,8 +23,8 @@ int main()
 		// Задача 2: підрахунок кількості 1 у двійковому поданні
 		while (num > 0)
 		{
-			cou += (num & 1); // додаємо 1, якщо молодший біт рівний 1
-			num >>= 1;		  // зсув числа вправо на 1 біт
+			cou += (num & 1);
+			num >>= 1;
 		}
 		cout << "Amount of 1: " << cou << endl;
 	}
