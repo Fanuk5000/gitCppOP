@@ -1,3 +1,10 @@
+/*
+Done by: me
+Student Name: Illya Maksemchuk
+Student Group: 121
+Lb2_3(Calulator)
+
+*/
 #include <iostream>
 #include <stack>
 #include <string>
