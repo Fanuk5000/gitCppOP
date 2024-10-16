@@ -42,7 +42,8 @@ int performOperation(char operation, int operand1, int operand2)
 
 string infixToPostfix(const string &expression) // converts an infix expression to postfix
 {
-	stack<char> operators;
+	stack<char> operators; // stack is sequence of elements, where is acess to elements is limited. U can only iteract with only top
+	// 1 comes last ends
 	string postfix;
 	int n = expression.length();
 
@@ -55,7 +56,7 @@ string infixToPostfix(const string &expression) // converts an infix expression 
 
 		if (isdigit(current))
 		{
-			while (i < n && isdigit(expression[i])) // If number is longer than 1
+			while (i < n && isdigit(expression[i])) // If digit is longer than 1
 				postfix += expression[i++];
 			postfix += ' ';
 			i--;
@@ -113,7 +114,7 @@ int evaluatePostfix(const string &expression)
 
 			while (i < n && isdigit(expression[i])) // it goes on every digit
 			{
-				number = number * 10 + (expression[i] - '0'); // ansi division from string to int
+				number = number * 10 + (expression[i] - '0'); // ansi division from string to int (char-'0'=int)
 				i++;
 			}
 			operands.push(number);
@@ -139,7 +140,7 @@ int main()
 	while (true)
 	{
 		cout << "Enter an infix expression (or type 'exit' to quit): ";
-		getline(cin, expression);
+		getline(cin, expression); // u can write with spaces, because cin in solo can`t
 
 		if (expression == "exit")
 			break;
