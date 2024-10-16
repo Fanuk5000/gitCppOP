@@ -1,3 +1,10 @@
+/*
+Done by: me
+Student Name: Illya Maksemchuk
+Student Group: 121
+RGR
+*/
+// Варіант 9 ., Α..Κ ланцюжок містить два підланцюжки з символів А.. К, які розподілені крапкою
 #include <iostream>
 
 using namespace std;
