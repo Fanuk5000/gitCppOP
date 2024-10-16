@@ -65,7 +65,9 @@ int main()
 	const string proc = "\033[34m%\033[0m";
 	const string chn = "\033[33m#\033[0m";
 	//@, $, %, #
-	int n = 3; // n
+	int n;
+	cout << "enter n:";
+	cin >> n; // n
 
 	int couN = n;
 	int couSpace = n;

@@ -74,5 +74,6 @@ int main()
 	}
 	cout << "Vector B: ";
 	printVec(vecB);
+
 	return 0;
 }
