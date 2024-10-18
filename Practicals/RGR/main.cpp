@@ -33,7 +33,6 @@ int main()
 	cout << "Enter your line: ";
 	cin >> line;
 	bool lV = checkLV(line);
-	cout << lV << endl;
 	if (lV == true)
 		cout << "The line belongs to L(V)" << endl;
 	else
