@@ -10,22 +10,35 @@ RGR
 using namespace std;
 bool checkLV(string &line)
 {
+	int counter = 0;
 	bool exist = 0;
 	int n = line.length();
 	if (n == 0)
 		return false;
+
+	if (line[0] == '.')
+		return false;
+
+	if (line[n - 1] == '.')
+		return false;
+
 	for (int i = 0; i < n; i++)
 	{
 
 		char c = line[i];
 		if (c == '.')
+		{
 			exist = 1;
+			counter++;
+		}
 		if ((!(c >= 'A' and c <= 'K') and c != '.'))
-			return false;
+			return 0;
 	}
+	if (counter != 1)
+		return 0;
 	if (exist == 0)
-		return false;
-	return true;
+		return 0;
+	return 1;
 }
 int main()
 {
