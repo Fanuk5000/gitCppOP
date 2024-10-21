@@ -39,7 +39,7 @@ inline void addToEnd(Node **head, int value) // 1. addToEnd
 	}
 
 	Node *current = *head;
-	while (current->next != nullptr) // goes through linked list until it finds nullptr
+	while (current->next != nullptr) // goes through linked list until it finds nullptr(end)
 	{
 		current = current->next; // and sets index of current near the nullptr
 	}

@@ -1,0 +1,21 @@
+[1mdiff --git a/Practicals/RGR/main.cpp b/Practicals/RGR/main.cpp[m
+[1mindex 384fc4a..db8977a 100644[m
+[1m--- a/Practicals/RGR/main.cpp[m
+[1m+++ b/Practicals/RGR/main.cpp[m
+[36m@@ -14,13 +14,13 @@[m [mbool checkLV(string &line)[m
+ 	bool exist = 0;[m
+ 	int n = line.length();[m
+ 	if (n == 0)[m
+[31m-		return false;[m
+[32m+[m		[32mreturn 0;[m
+ [m
+ 	if (line[0] == '.')[m
+[31m-		return false;[m
+[32m+[m		[32mreturn 0;[m
+ [m
+ 	if (line[n - 1] == '.')[m
+[31m-		return false;[m
+[32m+[m		[32mreturn 0;[m
+ [m
+ 	for (int i = 0; i < n; i++)[m
+ 	{[m

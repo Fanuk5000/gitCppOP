@@ -14,13 +14,13 @@ bool checkLV(string &line)
 	bool exist = 0;
 	int n = line.length();
 	if (n == 0)
-		return false;
+		return 0;
 
 	if (line[0] == '.')
-		return false;
+		return 0;
 
 	if (line[n - 1] == '.')
-		return false;
+		return 0;
 
 	for (int i = 0; i < n; i++)
 	{
@@ -28,15 +28,12 @@ bool checkLV(string &line)
 		char c = line[i];
 		if (c == '.')
 		{
-			exist = 1;
 			counter++;
 		}
 		if ((!(c >= 'A' and c <= 'K') and c != '.'))
 			return 0;
 	}
 	if (counter != 1)
-		return 0;
-	if (exist == 0)
 		return 0;
 	return 1;
 }
